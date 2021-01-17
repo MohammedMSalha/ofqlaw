@@ -1,0 +1,34 @@
+DirectoryIndex index.php
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^login/?$ files/page/login.php [L,NC]
+RewriteRule ^dashboard/?$ files/page/dashboard.php [L,NC]
+RewriteRule ^clients/?$ files/page/clients.php [L,NC]
+RewriteRule ^files/create/?$ files/page/new-file.php [L,NC]
+RewriteRule ^files/edit/?$ files/page/edit-file.php [L,NC]
+RewriteRule ^payments/?$ files/page/payment.php [L,NC]
+RewriteRule ^files/?$ files/page/files.php [L,NC]
+RewriteRule ^users/?$ files/page/users.php [L,NC]
+RewriteRule ^profile/?$ files/page/profile.php [L,NC]
+RewriteRule ^opp/?$ files/page/opp.php [L,NC]
+RewriteRule ^logout/?$ files/page/logout.php [L,NC]
+RewriteRule ^setting/?$ files/page/setting.php [L,NC]
+RewriteRule ^due/?$ files/page/due.php [L,NC]
+RewriteRule ^exchange/?$ files/page/exchange.php [L,NC]
+RewriteRule ^reports/public/?$ files/page/report-public.php [L,NC]
+RewriteRule ^reports/fees/?$ files/page/report-fees.php [L,NC]
+RewriteRule ^reports/salary/?$ files/page/report-salary.php [L,NC]
+RewriteRule ^logs/?$ files/page/logs.php [L,NC]
+
+RewriteRule ^index.php?$ ^login/ [L,NC]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+Redirect /index.php /login/
+
+
+ 
